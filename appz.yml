@@ -1,17 +1,17 @@
 app:
     name: Postgres Master
-    code: POSTGRES
-    notify: appz@cloudcontrol.com
+    code: POSTGRESMaster
+    notify: srswain@ecloudcontrol.com
     
 build:
     version: 13.X
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: postgres_master-13.3
+    image_template: postgres-13.3_master
     
 deploy:
-    context: alpha/DEV
+    context: sranjan1995/DEV
     type: statefulset
     ingress: none
     replicas: 1
@@ -42,7 +42,7 @@ properties:
       vault: POSTGRESQL_DOTNET_PASSWORD
     PGPASSWORD: 
       vault: PGPASSWORD
-    revision : 76
+    revision : 0
 
     #WebDav Setup
     PUSH_BACKUP_WEBDAV: False
